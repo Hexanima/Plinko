@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwn3q6vqkg4c7"]
+
+[ext_resource type="Script" uid="uid://dbdqoij7i64te" path="res://scripts/Main.cs" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://c7uagko7jgkmn" path="res://scenes/ball.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://cm0e3pwxek5m7" path="res://scenes/platform.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bm7hkeunheoqv" path="res://scenes/shapes/rectangle-shape.tscn" id="4_tbgi4"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_o5qli")
+
+[node name="Ball" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(559, 96)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Platform" parent="." instance=ExtResource("3_jyhfs")]
+position = Vector2(565, 252)
+scale = Vector2(10.4, 1)
+
+[node name="RectangleShape" parent="Platform" instance=ExtResource("4_tbgi4")]
