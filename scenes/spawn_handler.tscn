@@ -1,6 +1,75 @@
-[gd_scene load_steps=2 format=3 uid="uid://eep77q4d8n5g"]
+[gd_scene load_steps=10 format=3 uid="uid://eep77q4d8n5g"]
 
 [ext_resource type="Script" uid="uid://beesqro33tf8q" path="res://scripts/SpawnHandler.cs" id="1_h3xh5"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_ypujr"]
+size = Vector3(30, 30, 1)
+
+[sub_resource type="Curve" id="Curve_23w4e"]
+_data = [Vector2(0.72727275, 0.59550565), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_x448q"]
+_data = [Vector2(0.6420455, 0.48314613), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_mv2u2"]
+_data = [Vector2(0.53977275, 0.8314607), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_k0gbn"]
+curve_x = SubResource("Curve_23w4e")
+curve_y = SubResource("Curve_x448q")
+curve_z = SubResource("Curve_mv2u2")
+
+[sub_resource type="Animation" id="Animation_lq637"]
+resource_name = "rotation"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="Animation" id="Animation_6g072"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bkbig"]
+_data = {
+&"RESET": SubResource("Animation_6g072"),
+&"rotation": SubResource("Animation_lq637")
+}
+
 [node name="SpawnHandler" type="Node2D"]
 script = ExtResource("1_h3xh5")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("BoxMesh_ypujr")
+texture = SubResource("CurveXYZTexture_k0gbn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MeshInstance2D")
+libraries = {
+&"": SubResource("AnimationLibrary_bkbig")
+}
+autoplay = "rotation"

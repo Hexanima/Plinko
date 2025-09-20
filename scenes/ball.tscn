@@ -6,6 +6,7 @@
 bounce = 0.8
 
 [node name="Ball" type="RigidBody2D"]
+mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_7s4qf")
 
 [node name="RoundShape" parent="." instance=ExtResource("1_7s4qf")]
