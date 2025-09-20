@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyds6sigtuxim"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2emww"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_eo2a7"]
+radius = 10.0
+height = 20.0
+
+[node name="RoundShape" type="CollisionShape2D"]
+shape = SubResource("CircleShape2D_2emww")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("SphereMesh_eo2a7")
