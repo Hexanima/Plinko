@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm0e3pwxek5m7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v4t87"]
+bounce = 0.8
+
+[node name="Platform" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_v4t87")
