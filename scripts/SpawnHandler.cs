@@ -7,23 +7,6 @@ public partial class SpawnHandler : Node2D
 
     [Export]
     public PackedScene nodeToSpawnPath;
-    private bool _wasMousePressed = false;
-
-    public override void _Process(double delta)
-    {
-        bool isMousePressed = Input.IsMouseButtonPressed(MouseButton.Left);
-
-        if (Input.IsActionJustPressed("spawn"))
-        {
-            FreefallSpawnItem();
-        }
-
-        if (isMousePressed && !_wasMousePressed)
-        {
-            AimedSpawnItem(GetGlobalMousePosition());
-        }
-        _wasMousePressed = isMousePressed;
-    }
 
     public void FreefallSpawnItem(Vector2? spawnPosition = null)
     {

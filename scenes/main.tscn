@@ -28,6 +28,7 @@ forceMultiplier = 75.0
 nodeToSpawnPath = ExtResource("2_0wfyh")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
