@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4b1tmfip486a"]
+
+[ext_resource type="FontFile" uid="uid://bk8gh3ncb04ni" path="res://fonts/RobotoMono-VariableFont_wght.ttf" id="1_77l0c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mykr4"]
+font = ExtResource("1_77l0c")
+font_size = 48
+font_color = Color(1, 0.81960785, 0.003921569, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="AfkText" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -32.5
+offset_right = 43.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "AFK"
+label_settings = SubResource("LabelSettings_mykr4")
+horizontal_alignment = 1
+vertical_alignment = 1
