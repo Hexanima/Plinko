@@ -1,12 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7uagko7jgkmn"]
+[gd_scene load_steps=6 format=3 uid="uid://c7uagko7jgkmn"]
 
 [ext_resource type="PackedScene" uid="uid://cyds6sigtuxim" path="res://scenes/shapes/round_shape.tscn" id="1_7s4qf"]
+[ext_resource type="Script" uid="uid://bkpbm2qtqp5fc" path="res://scripts/Ball.cs" id="1_cxlvu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7s4qf"]
 bounce = 0.8
 
+[sub_resource type="Gradient" id="Gradient_cxlvu"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f7cbr"]
+gradient = SubResource("Gradient_cxlvu")
+width = 40
+height = 40
+
 [node name="Ball" type="RigidBody2D"]
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_7s4qf")
+script = ExtResource("1_cxlvu")
 
 [node name="RoundShape" parent="." instance=ExtResource("1_7s4qf")]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.5
+texture = SubResource("GradientTexture2D_f7cbr")
+texture_scale = 0.5
