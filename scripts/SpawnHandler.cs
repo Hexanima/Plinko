@@ -44,8 +44,8 @@ public partial class SpawnHandler : Node2D
 
         if (node is RigidBody2D rigidBody)
         {
-            Vector2 forceDirection = (aimedPosition - _spawnPosition) * forceMultiplier;
-            rigidBody.ApplyForce(forceDirection);
+            Vector2 forceDirection = aimedPosition - _spawnPosition;
+            rigidBody.ApplyForce(forceDirection * forceMultiplier);
         }
     }
 }
