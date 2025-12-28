@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://do3bvdc75shcy"]
+
+[ext_resource type="Script" uid="uid://5nycii1c7imr" path="res://scripts/CameraHandler.cs" id="1_8d5xr"]
+[ext_resource type="PackedScene" uid="uid://c4b1tmfip486a" path="res://scenes/afk_text.tscn" id="1_fx0p3"]
+
+[node name="Camera" type="Camera2D"]
+zoom = Vector2(0.2, 0.2)
+script = ExtResource("1_8d5xr")
+
+[node name="AfkText" parent="." instance=ExtResource("1_fx0p3")]
+scale = Vector2(5, 5)

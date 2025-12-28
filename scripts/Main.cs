@@ -8,7 +8,7 @@ public partial class Main : Node2D
 
     public override void _Ready()
     {
-        label = GetNode<Node2D>("AfkText");
+        label = GetNode<Node2D>("Camera/AfkText");
         label.Visible = afk;
         spawnHandler = GetNode<SpawnHandler>("SpawnHandler");
     }
