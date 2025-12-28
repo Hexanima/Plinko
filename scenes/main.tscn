@@ -11,7 +11,7 @@
 script = ExtResource("1_o5qli")
 
 [node name="Camera" parent="." instance=ExtResource("2_tefeu")]
-position = Vector2(576, 1500)
+position = Vector2(576, 324)
 
 [node name="Platform" parent="." instance=ExtResource("3_jyhfs")]
 position = Vector2(565, 252)
